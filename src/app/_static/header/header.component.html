@@ -1,0 +1,18 @@
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Prev'Avility</span>
+    <span class="example-spacer"></span>
+    <span>{{auth.userAuthenticated.username}}</span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+            *ngIf="auth.isAuthenticated" (click)="logout()" >
+      <mat-icon>logout</mat-icon>
+    </button>
+    <button  *ngIf="!auth.isAuthenticated" routerLink="login" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>login</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+

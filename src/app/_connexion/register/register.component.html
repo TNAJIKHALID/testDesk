@@ -1,0 +1,55 @@
+<div class="container">
+  <div  class="card shadow p-3 mb-5 bg-white rounded float-right" style="width: 30rem;">
+    <h2 class="text-center">Créer un compte !</h2>
+    <hr/>
+    <div class="card-body">
+      <div>
+        <form  [formGroup]="myForm" >
+          <div class = "row w-100">
+            <mat-form-field >
+              <input matInput placeholder="nom" formControlName="firstName">
+              <mat-error *ngIf="firstName.invalid && firstName.touched">
+                merci d'entrer votre nom
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="ml-3">
+              <input matInput placeholder="prénom" formControlName="lastName">
+              <mat-error *ngIf="lastName.invalid && lastName.touched">
+                merci d'entrer votre prénom
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="w-75 mt-3">
+              <input matInput placeholder="email" formControlName="email">
+              <mat-error *ngIf="email.invalid && email.touched">
+                  adresse mail invalid
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row w-100 mt-3">
+            <mat-form-field class="mr-3">
+              <input type="password" matInput placeholder="password" formControlName="password">
+              <mat-hint>le mot de pass doit avoire entre 8 et 10 caractére.</mat-hint>
+              <mat-error *ngIf="password.invalid && password.touched">
+                mot de pass invalid
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" matInput placeholder="confirmer le password" formControlName="rePassword">
+              <mat-error *ngIf="rePassword.invalid">Confirm Password is required</mat-error>
+              <mat-error *ngIf="rePassword.value != password.value">
+                les mots de pass ne se coresponds pas
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!-- form-group end.// -->
+          <div class="row justify-content-center mt-5">
+            <button mat-raised-button  color="primary" [disabled]="myForm.invalid">Créer un compte</button>
+          </div> <!-- form-group// -->
+          <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>
+        </form>
+      </div>
+    </div>
+</div>
+</div>

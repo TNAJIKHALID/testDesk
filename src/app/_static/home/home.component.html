@@ -1,0 +1,147 @@
+<app-header></app-header>
+<section class="page-section" id="services">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading">Habilitation Electrique</h2>
+      <hr/>
+    </div>
+    <div class="row text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 mt-4">
+            <div  class="card shadow p-3 mb-5 bg-white rounded" style="width: 20rem;">
+              <div class="card-body">
+                <h3 class="card-title">Exécutant non électricien</h3>
+                <h4 class="card-subtitle mb-2 text-muted">B0 – H0 /  B0V – H0V</h4>
+                <p class="card-text">s’assurer de la bonne exécution du travail et de l'enlèvement de tous les outils</p>
+                <a class="btn btn-warning mr-sm-1" routerLink="/test/false">M'entrainer</a>
+                <button class="btn btn-outline-warning dropdown-toggle" [matMenuTriggerFor]="afterMenu">M'évaluer</button>
+                <mat-menu #afterMenu="matMenu" xPosition="after">
+                  <button mat-menu-item routerLink="/test/true">H0</button>
+                  <button mat-menu-item>B0</button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 mt-4">
+            <div  class="card shadow p-3 mb-5 bg-white rounded" style="width: 20rem;">
+              <div class="card-body">
+                <h5 class="card-title">Exécutant électricien</h5>
+                <h6 class="card-subtitle mb-2 text-muted">B1 – H1 /  B1V – H1V</h6>
+                <p class="card-text">s’assurer de la bonne exécution du travail et de l'enlèvement de tous les outils</p>
+                <a class="btn btn-primary mr-sm-1">M'entrainer</a>
+                <button class="btn btn-outline-primary dropdown-toggle" [matMenuTriggerFor]="afterMenu">M'évaluer</button>
+                <mat-menu #afterMenu="matMenu" xPosition="after">
+                  <button mat-menu-item>H0</button>
+                  <button mat-menu-item>B0</button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 mt-4">
+            <div  class="card shadow p-3 mb-5 bg-white rounded" style="width: 20rem;">
+              <div class="card-body">
+                <h5 class="card-title">Chargé de travaux</h5>
+                <h6 class="card-subtitle mb-2 text-muted">B2 – H2 /  B2V – H2V</h6>
+                <p class="card-text">s’assurer de la bonne exécution du travail et de l'enlèvement de tous les outils</p>
+                <a class="btn btn-primary mr-sm-1">M'entrainer</a>
+                <button class="btn btn-outline-primary dropdown-toggle" [matMenuTriggerFor]="afterMenu">M'évaluer</button>
+                <mat-menu #afterMenu="matMenu" xPosition="after">
+                  <button mat-menu-item>H0</button>
+                  <button mat-menu-item>B0</button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 mt-4">
+            <div  class="card shadow p-3 mb-5 bg-white rounded" style="width: 20rem;">
+              <div class="card-body">
+                <h5 class="card-title">Chargé de consignation</h5>
+                <h6 class="card-subtitle mb-2 text-muted">BC – HC</h6>
+                <p class="card-text">s’assurer de la bonne exécution du travail et de l'enlèvement de tous les outils</p>
+                <a class="btn btn-primary mr-sm-1">M'entrainer</a>
+                <button class="btn btn-outline-primary dropdown-toggle" [matMenuTriggerFor]="afterMenu">M'évaluer</button>
+                <mat-menu #afterMenu="matMenu" xPosition="after">
+                  <button mat-menu-item>H0</button>
+                  <button mat-menu-item>B0</button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<style>
+
+  .tp-box {
+    position: relative;
+/*
+<section>
+  <div class="card border rounded shadow-lg" style="width: 20rem;">
+    <div class="tp-box " (click)="toggleFlip()" [@flipState]="flip" >
+      <div class="tp-box__side tp-box__front" >
+        <div class="card-body">
+          <h5 class="card-title">Chargé de travaux</h5>
+          <h6 class="card-subtitle mb-2 text-muted">B2 – H2 /  B2V – H2V</h6>
+          <p class="card-text">s’assurer de la bonne exécution du travail et de l'enlèvement de tous les outils</p>
+        </div>
+      </div>
+      <div class="tp-box__side tp-box__back ">
+        <div class="card-body">
+          <h5 class="card-title">Evaluation</h5>
+          <h6 class="card-subtitle mb-2 text-muted">B2 – H2 /  B2V – H2V</h6>
+          <p class="card-text">s’assurer de la bonne exécution du travail et de l'enlèvement de tous les outils</p>
+          <a class="btn btn-primary mr-sm-1">M'entrainer</a>
+          <button class="btn btn-outline-primary dropdown-toggle" [matMenuTriggerFor]="afterMenu">M'évaluer</button>
+          <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item>H0</button>
+            <button mat-menu-item>B0</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+     width: 20rem;
+height: 25rem;
+*/
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: transform 1s;
+    -ms-transform: transform 1s;
+    transform: transform 1s;
+  }
+  .tp-box__side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /*text-align: center;
+    line-height: 100px;
+    font-size: 24px;
+    font-weight: 700;*/
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .tp-box__front {
+    -webkit-transform : rotateY(0deg);
+    -ms-transform     : rotateY(0deg);
+    transform         : rotateY(0deg);
+  }
+  .tp-box__back {
+    -webkit-transform : rotateY(-180deg);
+    -ms-transform     : rotateY(-180deg);
+    transform         : rotateY(-180deg);
+  }
+</style>

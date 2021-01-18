@@ -1,0 +1,174 @@
+<section class="mb-lg-5"> </section>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-6 float-right">
+          <div class="row">
+            <div class="example-container">
+              <hr/>
+              <h1 class="text-center">Zones</h1>
+              <div
+                id="all"
+                cdkDropList
+                [cdkDropListData]="zoneValues"
+                [cdkDropListConnectedTo]="connected"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListEnterPredicate]="noReturnPredicate">
+                <div class="example-box mt-2" style="width: 10rem;"
+                     *ngFor="let number of zoneValues"
+                     [cdkDragData]="number"
+                     cdkDrag>{{number}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 float-left">
+          <div class="card border mb-3" *ngFor="let z of zonesMap.values();let i=index"
+               style="width: 10rem; background-color: green "
+               [style.background-color]="colors[i]"
+          >
+            <h3 class="text-center">{{names[i]}}</h3>
+            <div
+              id="{{i}}"
+              cdkDropList
+              [cdkDropListData]="zonesMap.get(i)"
+              [cdkDropListConnectedTo]="connectedAllToZ"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+              [cdkDropListEnterPredicate]="evenPredicate">
+              <div
+                class="example-box"
+                *ngFor="let number of z"
+                cdkDrag
+                [cdkDragData]="number">{{number}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <img alt="..." class="img-fluid w-75 float-left" [src]="dataService.host+'/photoQuestion/'+question.id">
+    </div>
+  </div>
+</div>
+<!--
+    <div class="row">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="example-container">
+              <hr/>
+              <h1 class="text-center">Zones</h1>
+              <div
+                id="all"
+                cdkDropList
+                [cdkDropListData]="zoneValues"
+                [cdkDropListConnectedTo]="connected"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListEnterPredicate]="noReturnPredicate">
+                <div class="example-box mt-2" style="width: 10rem;"
+                  *ngFor="let number of zoneValues"
+                  [cdkDragData]="number"
+                  cdkDrag>{{number}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card border mb-3" *ngFor="let z of zones;let i=index"
+               style="width: 10rem; background-color: green "
+          >
+            <h3 class="text-center">Zone {{i+1}}</h3>
+            <div
+              id="{{i}}"
+              cdkDropList
+              [cdkDropListData]="zones[i]"
+              [cdkDropListConnectedTo]="connectedAllToZ"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+              [cdkDropListEnterPredicate]="evenPredicate">
+              <div
+                class="example-box"
+                *ngFor="let number of z"
+                cdkDrag
+                [cdkDragData]="number">{{number}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+-->
+<!--
+ <div class="example-container">
+          <h5>Zone de voisinage renforcé en haute tension</h5>
+          <div
+            id="all2"
+            cdkDropList
+            [cdkDropListData]="all"
+            cdkDropListConnectedTo="even"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListEnterPredicate]="noReturnPredicate">
+            <div
+              class="example-box"
+              *ngFor="let number of all"
+              [cdkDragData]="number"
+              cdkDrag>{{number}}</div>
+          </div>
+        </div>
+        <div class="example-container">
+          <h5>Zone des travaux sous tension en haute tension</h5>
+          <div
+            id="all3"
+            cdkDropList
+            [cdkDropListData]="all"
+            cdkDropListConnectedTo="even"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListEnterPredicate]="noReturnPredicate">
+            <div
+              class="example-box"
+              *ngFor="let number of all"
+              [cdkDragData]="number"
+              cdkDrag>{{number}}</div>
+          </div>
+        </div>
+-->
+<!--
+<div class="card border mr-3 bg-danger" style="width: 10rem;">
+          <h3 class="text-center">Even numbers</h3>
+          <div
+            id="evend"
+            cdkDropList
+            [cdkDropListData]="evend"
+            [cdkDropListConnectedTo]="['even','evendd','evend','all']"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListEnterPredicate]="evenPredicate">
+            <div
+              class="example-box"
+              *ngFor="let number of evend"
+              cdkDrag
+              [cdkDragData]="number">{{number}}</div>
+          </div>
+        </div>
+        <div class="card border mr-3 bg-warning" style="width: 10rem;">
+          <h3 class="text-center">Even numbers</h3>
+          <div
+            id="evendd"
+            cdkDropList
+            [cdkDropListData]="evendd"
+            [cdkDropListConnectedTo]="['even','evendd','evend','all']"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListEnterPredicate]="evenPredicate">
+            <div
+              class="example-box"
+              *ngFor="let number of evendd"
+              cdkDrag
+              [cdkDragData]="number">{{number}}</div>
+          </div>
+        </div>
+-->

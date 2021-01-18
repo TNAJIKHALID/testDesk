@@ -1,0 +1,45 @@
+<section></section>
+<div class="container mt-5">
+  <div  class="card shadow p-3 mb-5 bg-white rounded w-100" style="height: 35rem;">
+    <div class="">
+      <h2 class="mat-h2 text-center">Resultats</h2>
+
+    </div>
+    <mat-divider></mat-divider>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-8">
+          Description du test Qui et explicabo voluptatem et ab qui vero et voluptas. Sint voluptates temporibus quam autem. Atque nostrum voluptatum laudantium a doloremque enim et ut dicta. Nostrum ducimus est iure minima totam doloribus nisi ullam deserunt. Corporis aut officiis sit nihil est. Labore aut sapiente aperiam.
+          Qui voluptas qui vero ipsum ea voluptatem. Omnis et est. Voluptatem officia voluptatem adipisci et iusto provident doloremque consequatur. Quia et porro est. Et qui corrupti laudantium ipsa.
+          Eum quasi saepe aperiam qui delectus quaerat in. Vitae mollitia ipsa quam. Ipsa aut qui numquam eum iste est dolorum. Rem voluptas ut sit ut.
+        </div>
+        <div class="col-lg-4">
+          <div class="p-3 border rounded-pill shadow d-flex justify-content-between">
+            <span>Nom</span> <span><b>{{auth.userAuthenticated.username}}</b></span>
+          </div>
+          <div class="p-3 border rounded-pill shadow mt-2 d-flex justify-content-between">
+            <span>Temps Passer</span> <span><b>2 min</b></span>
+          </div>
+          <div class="p-3 border  rounded-pill shadow mt-2 d-flex justify-content-between">
+            <span>Nombre des questions correctes</span>
+            <span><b>{{score.totalNumberOfCorrectAnswers}}</b></span>
+          </div>
+          <div [ngClass]="score.validate? 'bg-success' : 'bg-danger'"
+            class="p-3 rounded-pill shadow mt-2 d-flex justify-content-between ">
+            <span>Score</span>
+            <span><b>{{score.score  | number:'.2-2'}}%</b></span>
+          </div>
+          <div class="p-3 border  rounded-pill shadow mt-2 d-flex">
+            <mat-progress-spinner
+              class="m-auto"
+              [color]="score.validate ? 'primary' : 'warn'"
+              [mode]="'determinate'"
+              [value]="score.score">
+            </mat-progress-spinner>
+            <h1 class="m-auto"><b>{{score.score  | number:'.2-2'}}%</b></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

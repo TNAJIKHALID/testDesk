@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5 " [ngClass]="error ?'border border-danger': ''" >
+        <div class="card-body">
+          <h5 class="card-title text-center">Bonjour !</h5>
+          <form [formGroup]="myForm">
+            <div class="row w-100 m-auto">
+              <mat-form-field class="w-100 mt-3 m-auto">
+                <input matInput placeholder="email" formControlName="email">
+                <mat-error *ngIf="email.invalid && email.touched">
+                  adresse mail invalide
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row w-100 mt-5 mb-5 m-auto">
+              <mat-form-field class="w-100 mt-3 m-auto">
+                <input type="password" matInput placeholder="password" formControlName="password">
+                <mat-error  *ngIf="passwordd.invalid && passwordd.touched">
+                  mot de pass invalid
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row mt-3 m-auto justify-content-center">
+              <button mat-raised-button  color="primary" [disabled]="myForm.invalid" (click)="onLogin()">connexion</button>
+            </div>
+          </form>
+
+            <h4 class="card-title text-center">
+              <a routerLink="/register" class="mat-tab-link">créer un compte ?</a><br>
+              <a routerLink="/forgot" class="mat-tab-link">mot de pass oublier ?</a>
+            </h4>
+          <h4 class="card-title text-center">
+          </h4>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<form [formGroup]="myForm">
+            <mat-form-field>
+              <input matInput placeholder="email" formControlName="email">
+              <mat-error *ngIf="email.invalid && email.touched">
+                adresse mail invalide
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" matInput placeholder="password" formControlName="password">
+              <mat-error  *ngIf="passwordd.invalid && passwordd.touched">
+                mot de pass invalid
+              </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="myForm.invalid" (click)="onLogin()">connexion</button>
+          </form>
+-->
+
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5 " [ngClass]="error ?'border border-danger': ''" >
+        <div class="card-body">
+          <h5 class="card-title text-center">Bonjour !</h5>
+
+          <form class="form-signin">
+            <h3 class="text-danger text-center" *ngIf="error">email ou password incorrect</h3>
+            <div class="form-group">
+              <label for="inputEmail" class="ml-2"><b>Email</b></label>
+              <input type="email" id="inputEmail" class="form-control " [ngClass]="error ?'is-invalid': ''" ngModel [(ngModel)]="username"
+                      name="username"
+                     placeholder="Email address" required="required" autofocus>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="ml-2"><b>Password</b></label>
+              <input type="password" ngModel [(ngModel)]="password" name="password"
+                     id="inputPassword" class="form-control" [ngClass]="error ?'is-invalid': ''"  placeholder="Password" required="required">
+            </div>
+
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">se souvenir de moi</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="onLogin()" type="submit">Connexion</button>
+            <hr class="my-4">
+           </form>
+
+            <h4 class="card-title text-center">
+              <a routerLink="/register" class="mat-tab-link">créer un compte ?</a><br>
+              <a routerLink="/register" class="mat-tab-link">mot de pass oublier ?</a>
+            </h4>
+          <h4 class="card-title text-center">
+          </h4>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
